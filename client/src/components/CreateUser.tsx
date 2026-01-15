@@ -12,7 +12,7 @@ const CreateUser = () => {
         try {
             e.preventDefault();
             const result = await axios.post(
-                "http://localhost:4000/user/createUser",
+                " https://todo-app1-30yx.onrender.com/user/createUser",
                 { username, age, email }
             )
             console.log(result.data)

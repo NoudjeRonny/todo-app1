@@ -12,23 +12,23 @@ const Home = () => {
     const [users, setUsers] = useState<User[]>([])
     const fetchUser = async () => {
         try {
-            const result = await axios.get('http://localhost:4000/user')
+            const result = await axios.get(' https://todo-app1-30yx.onrender.com/user')
             if (result && result.data) setUsers(result.data)
         } catch (error) {
             console.log(error)
         }
     }
     //delete functions 
-   const deleteUser = async (id: string) => {
-    if (!window.confirm("Are you sure you want to delete this user?")) return;
+    const deleteUser = async (id: string) => {
+        if (!window.confirm("Are you sure you want to delete this user?")) return;
 
-    try {
-        await axios.delete(`http://localhost:4000/user/deleteUser/${id}`)
-        setUsers(prevUsers => prevUsers.filter(user => user._id !== id))
-    } catch (error) {
-        console.log(error)
+        try {
+            await axios.delete(` https://todo-app1-30yx.onrender.com/user/deleteUser/${id}`)
+            setUsers(prevUsers => prevUsers.filter(user => user._id !== id))
+        } catch (error) {
+            console.log(error)
+        }
     }
-}
 
 
     useEffect(() => {
