@@ -21,9 +21,9 @@ const UpdateUser = () => {
             setUsername(res.data.username);
             setEmail(res.data.email);
             setAge(res.data.age);
-        } catch (error: any) {
+        } catch (error) {
             // Type-safe error handling
-            console.error(error.response?.data || error.message || error);
+            console.error(error);
         }
     };
 
@@ -43,8 +43,8 @@ const UpdateUser = () => {
             );
             console.log(res.data);
             navigate("/"); // Go back to home after update
-        } catch (error: any) {
-            console.error(error.response?.data || error.message || error);
+        } catch (error) {
+            console.error(error);
         }
     };
 
